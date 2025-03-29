@@ -10,6 +10,7 @@ struct Location: Identifiable {
     let longitude: Double
     let color: Color
     var description: String?
+    var symbol: String?
 }
 
 struct MapView: View {
@@ -23,6 +24,7 @@ struct MapView: View {
     @State private var hasSetRegion = false
     @State private var selectedLocation: Location? // Track clicked location
     
+    //list of all locations
     let locations: [Location] = [
         // 🔴 Events
         Location(name: "Highland Games", latitude: 56.8169, longitude: -5.1128, color: .red, description: "UWUWUWUWUUWUWUWUWUWWUWUUWUWWUWUW"),
@@ -39,7 +41,7 @@ struct MapView: View {
         
         // 🟣 Myths & Legends
         Location(name: "Loch Ness Monster", latitude: 57.3229, longitude: -4.4244, color: .purple),
-        Location(name: "Fingal's Cave", latitude: 56.4337, longitude: -6.3350, color: .purple)
+        Location(name: "Fingal's Cave", latitude: 56.4337, longitude: -6.3350, color: .purple, symbol: "mountain.2.fill")
     ]
     
     var body: some View {
@@ -52,10 +54,12 @@ struct MapView: View {
                             selectedLocation = location // Update selected location
                         })
                         {
-                            Image(systemName: "mappin.circle.fill")
+                            //displays mappin if no symbol is declared in location list
+                            Image(systemName:location.symbol ?? "mappin.circle.fill")
                                 .font(.title)
                                 .foregroundColor(location.color)
                         }
+                        //removes the rectangel around the button
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
