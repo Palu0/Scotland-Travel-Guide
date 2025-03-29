@@ -12,9 +12,6 @@ struct enfApp: App{
     var body: some Scene {
         WindowGroup {
             Menu()
-            
-    
         }
-        
     }
 }

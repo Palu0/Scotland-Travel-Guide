@@ -50,13 +50,13 @@ struct MapView: View {
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
                         Button(action: {
                             selectedLocation = location // Update selected location
-                        }) {
-                            VStack {
-                                Image(systemName: "mappin.circle.fill")
-                                    .font(.title)
-                                    .foregroundColor(location.color)
-                            }
+                        })
+                        {
+                            Image(systemName: "mappin.circle.fill")
+                                .font(.title)
+                                .foregroundColor(location.color)
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
                 .onReceive(locationManager.$lastLocation) { newLocation in
@@ -99,7 +99,7 @@ struct MapView: View {
                         }
                         .padding(10) // Reduce padding here
                         .frame(width: screenWidth, height: screenHeight*0.3) // Make the width slightly smaller
-                        .background(Color(UIColor.systemGray6))
+                        .background(Color(.systemGray6))
                         .cornerRadius(15)
                         .shadow(radius: 5)
                         .offset(y: 0.035*screenHeight)
