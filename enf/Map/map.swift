@@ -175,7 +175,7 @@ struct MapView: View {
                                 //.offset(y: 0.035*screenHeight)
                                 .shadow(radius: 5)
                             }
-                            .offset(y: 10)//moving everything down so that the round corners aren't visible anymore
+                            .offset(y: -57)//moving everything down so that the round corners aren't visible anymore
                         }
                     }
                 }
