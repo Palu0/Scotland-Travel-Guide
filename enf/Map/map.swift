@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 import CoreLocation
-
+//moogen
 // Location Struct
 struct Location: Identifiable {
     let id = UUID()
