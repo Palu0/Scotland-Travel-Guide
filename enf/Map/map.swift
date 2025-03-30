@@ -116,4 +116,3 @@ struct MapView: View {
         }
     }
 
-//mogen
