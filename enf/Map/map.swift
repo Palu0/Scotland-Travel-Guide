@@ -82,34 +82,37 @@ struct MapView: View {
                     let screenHeight = screenSize.height
                     // Button funcionality
                     VStack{
-                        Spacer()
-                        
-                        VStack(alignment: .leading, spacing: 5) { // Adjust spacing
-                            HStack {
-                                Text(selectedLocation.name)
-                                    .font(.headline)
-                                
-                                Spacer()
-                                
-                                Button(action: {
-                                    self.selectedLocation = nil
-                                }) {
-                                    Image(systemName: "xmark.circle")
-                                }
-                            }
-                            
-                            Text(selectedLocation.description ?? "No description available.")
-                                .font(.subheadline)
-                        }
-                        .padding(10) // Reduce padding here
-                        .frame(width: screenWidth, height: screenHeight*0.3) // Make the width slightly smaller
-                        .background(Color(.systemGray6))
-                        .cornerRadius(15)
-                        .shadow(radius: 5)
-                        .offset(y: 0.035*screenHeight)
+                                            Spacer()
+                                            
+                                            VStack(alignment: .leading, spacing: 5) { // Adjust spacing
+                                                HStack {
+                                                    Text(selectedLocation.name)
+                                                        .font(.headline)
+                                                    
+                                                    Spacer()
+                                                    
+                                                    Button(action: {
+                                                        self.selectedLocation = nil
+                                                    }) {
+                                                        Image(systemName: "xmark.circle")
+                                                    }
+                                                }
+                                                
+                                                Text(selectedLocation.description ?? "No description available.")
+                                                    .font(.subheadline)
+                                            }
+                                            .padding(10) // Reduce padding here
+                                            // .frame(width: screenWidth, height: screenHeight*0.3) // Make the width slightly smaller
+                                            .background(Color(.systemGray6))
+                                            .cornerRadius(10)
+                                            // .cornerRadius(15)
+                                            //.offset(y: 0.035*screenHeight)
+                                            .shadow(radius: 5)
+                    }
+                    .offset(y: 10)//moving everything down so that the round corners aren't visible anymore
                     }
                 }
             }
         }
     }
-}
+
