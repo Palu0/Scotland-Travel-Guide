@@ -6,8 +6,17 @@
 //
 import SwiftUI
 
+var randomlocation : String = ""
+
 struct myths: View {
     public var body: some View {
-        Text("Myths")
+        VStack{
+            Text("Your Tip of the Day!")
+                .font(.headline)
+            Button("Get your Tip of the Day") {
+                
+            }
+            Text("Let's visit \(locations.randomElement()?.name ?? "No locations available")")
+        }
     }
 }
