@@ -15,9 +15,9 @@ struct Menu: View{
                 .tabItem {
                     Label("Map",systemImage: "globe")
                 }
-            myths()//myths and legends
+            TipOfDay()//myths and legends
                 .tabItem {
-                    Label("Settings",systemImage: "gear")
+                    Label("Tip of the Day",systemImage: "lightbulb.min")
                 }
         }.accentColor(Color.primary)
     }
