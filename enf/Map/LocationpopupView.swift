@@ -24,6 +24,6 @@ struct LocationPopupView: View {
             .cornerRadius(10)
             .shadow(radius: 5)
         }
-        .offset(y: -57)
+        .offset(y: +10)
     }
 }
