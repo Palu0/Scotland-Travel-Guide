@@ -15,7 +15,10 @@ struct TipOfDay: View {
                 .font(.headline)
             
             Text("Let's visit \(randomlocation?.name ?? "No locations available")")
+                .font(.title)
+            Text("\(randomlocation?.description ?? "No locations available")")
             
+            }
         }
     }
-}
+
