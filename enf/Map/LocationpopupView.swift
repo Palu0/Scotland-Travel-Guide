@@ -1,7 +1,5 @@
 import SwiftUI
 
-
-
 struct LocationPopupView: View {
     let location: Location
     let onClose: () -> Void
