@@ -16,7 +16,7 @@ struct Menu: View{
     var body: some View {
         
         TabView { //Initialize Tabs
-            MapView() //map
+            MapView(searchManager: SearchManager(locations: locations)) //map
                 .tabItem {
                     Label("Map",systemImage: "globe")
                 }
