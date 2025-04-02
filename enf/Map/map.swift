@@ -4,6 +4,7 @@ import CoreLocation
 
 
 struct MapView: View {
+    @State private var hasSetRegion: Bool = false
     @StateObject  var locationManager = LocationManager()
     @ObservedObject  var searchManager: SearchManager
     @State var region = MKCoordinateRegion(
@@ -29,6 +30,15 @@ struct MapView: View {
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
+                    .onReceive(locationManager.$lastLocation) { newLocation in
+                            if let newLocation = newLocation, !hasSetRegion {
+                                region = MKCoordinateRegion(
+                                    center: newLocation.coordinate,
+                                    span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)
+                                )
+                                hasSetRegion = true
+                            }
+                        }
                     .edgesIgnoringSafeArea(.all)
 
                     if let selectedLocation = selectedLocation {
