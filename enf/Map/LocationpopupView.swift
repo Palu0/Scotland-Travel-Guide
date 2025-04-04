@@ -11,6 +11,7 @@ struct LocationPopupView: View {
                 HStack {
                     Text(location.name)
                         .font(.title)
+                    Image(systemName: location.symbol ?? "globe")
                     Spacer()
                     Button(action: onClose) {
                         Image(systemName: "xmark.circle")
