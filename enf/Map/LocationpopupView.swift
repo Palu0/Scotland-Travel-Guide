@@ -4,6 +4,8 @@ struct LocationPopupView: View {
     let location: Location
     let onClose: () -> Void
 
+    @State private var isMenuOpen: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
@@ -17,9 +19,20 @@ struct LocationPopupView: View {
                         Image(systemName: "xmark.circle")
                     }
                 }
-                Image(systemName: "IMMAGE PLACEHOLDER")
-                Text(location.description ?? "No description available.")
-                    .font(.subheadline)
+                Image(location.name)
+                    .resizable()
+                    .scaledToFit()
+                HStack {
+                    Spacer()
+                    Button(isMenuOpen ? "read less" : "read more"){
+                        isMenuOpen.toggle()
+                    }
+                    .menuStyle(BorderlessButtonMenuStyle())
+                    Spacer()
+                }
+                if isMenuOpen {
+                    Text(location.description ?? "nothing to see here :(")
+                }
             }
             .padding()
             .background(Color(.systemGray6))
