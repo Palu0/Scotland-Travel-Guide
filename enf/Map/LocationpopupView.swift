@@ -17,6 +17,7 @@ struct LocationPopupView: View {
                         Image(systemName: "xmark.circle")
                     }
                 }
+                Image(systemName: "IMMAGE PLACEHOLDER")
                 Text(location.description ?? "No description available.")
                     .font(.subheadline)
             }

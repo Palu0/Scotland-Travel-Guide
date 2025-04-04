@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "tsrb_tall_ships_races_bergen_folkefest_bryggen_parade-1920x1080.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
