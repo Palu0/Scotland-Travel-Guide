@@ -52,19 +52,19 @@ let locations: [Location] = [
 
     
     // 🟢 History
-    Location(name: "Palace of Holyroodhouse", latitude: 55.9525, longitude: -3.1725, color: .green),
-    Location(name: "Dunnottar Castle", latitude: 56.9450, longitude: -2.1970, color: .green),
-    Location(name: "Urquhart Castle", latitude: 57.3240, longitude: -4.4400, color: .green),
-    Location(name: "St Giles' Cathedral", latitude: 55.9499, longitude: -3.1900, color: .green),
-    Location(name: "Fort George", latitude: 57.5786, longitude: -4.0417, color: .green),
-    Location(name: "Rosslyn Chapel", latitude: 55.8555, longitude: -3.1611, color: .green),
-    Location(name: "Balmoral Castle", latitude: 57.0406, longitude: -3.2305, color: .green),
-    Location(name: "National Wallace Monument", latitude: 56.1289, longitude: -3.9375, color: .green),
-    Location(name: "Linlithgow Palace", latitude: 55.9764, longitude: -3.6000, color: .green),
-    Location(name: "Culzean Castle & Country Park", latitude: 55.3565, longitude: -4.8104, color: .green),
-    Location(name: "Stirling Castle", latitude: 56.1224, longitude: -3.9461, color: .green),
-    Location(name: "Glamis Castle", latitude: 56.6225, longitude: -3.0047, color: .green),
-    Location(name: "Craigmillar Castle", latitude: 55.9231, longitude: -3.1314, color: .green),
+    Location(name: "Palace of Holyroodhouse", latitude: 55.9525, longitude: -3.1725, color: .green, description: "The official residence of the British monarch in Scotland, located at the end of Edinburgh’s Royal Mile. Steeped in history, it’s known for its grand architecture, beautiful gardens, and connections to Scottish royalty."),
+    Location(name: "Dunnottar Castle", latitude: 56.9450, longitude: -2.1970, color: .green, description: "A dramatic cliffside fortress on Scotland’s northeast coast, steeped in history. Once home to the Earls of Marischal, it’s famous for its stunning location and role in Scotland's medieval battles and royal history."),
+    Location(name: "Urquhart Castle", latitude: 57.3240, longitude: -4.4400, color: .green, description: "A historic ruin on the shores of Loch Ness, offering breathtaking views of the loch and surrounding Highlands. Once a strategic stronghold, it’s now a popular site for history lovers and those seeking a glimpse into Scotland’s past."),
+    Location(name: "St Giles' Cathedral", latitude: 55.9499, longitude: -3.1900, color: .green, description: "A magnificent medieval church located on Edinburgh’s Royal Mile. Known for its stunning architecture, particularly its Crown Spire, it’s a key part of Scotland’s religious history and a beautiful place to explore."),
+    Location(name: "Fort George", latitude: 57.5786, longitude: -4.0417, color: .green, description: "A large, 18th-century fortress near Inverness, built after the Jacobite rebellion to secure the Highlands. Still in use by the military today, it offers a glimpse into Scotland's military past and boasts spectacular views of the Moray Firth."),
+    Location(name: "Rosslyn Chapel", latitude: 55.8555, longitude: -3.1611, color: .green, description: "A captivating 15th-century chapel near Edinburgh, famous for its intricate carvings and mysterious symbolism. It gained global attention through The Da Vinci Code and remains a site of fascination for history and mystery enthusiasts."),
+    Location(name: "Balmoral Castle", latitude: 57.0406, longitude: -3.2305, color: .green, description: "The Scottish holiday home of the British royal family, located in the Cairngorms National Park. Known for its picturesque setting, the castle is surrounded by vast estates and has been a royal residence since Queen Victoria’s reign."),
+    Location(name: "National Wallace Monument", latitude: 56.1289, longitude: -3.9375, color: .green, description: "A towering structure in Stirling, dedicated to William Wallace, the Scottish hero who led the fight for independence. The monument offers panoramic views of the surrounding area and houses exhibits about Wallace’s life and legacy."),
+    Location(name: "Linlithgow Palace", latitude: 55.9764, longitude: -3.6000, color: .green, description: "The birthplace of Mary, Queen of Scots, and a stunning example of Renaissance architecture. Located near Edinburgh, its ruins are set beside a picturesque loch, offering a glimpse into Scotland’s royal past."),
+    Location(name: "Culzean Castle & Country Park", latitude: 55.3565, longitude: -4.8104, color: .green, description: "A grand 18th-century castle on the Ayrshire coast, surrounded by beautiful gardens and woodlands. It offers stunning views of the Firth of Clyde and is a popular spot for history, nature, and scenic walks."), //fix cords pls
+    Location(name: "Stirling Castle", latitude: 56.1224, longitude: -3.9461, color: .green, description: "One of Scotland’s most important historical sites, this royal fortress was the home of Scottish kings and queens, including Mary, Queen of Scots. Located atop a hill, it offers panoramic views and showcases Scotland’s medieval past."),
+    Location(name: "Glamis Castle", latitude: 56.6225, longitude: -3.0047, color: .green, description: "A historic Scottish castle famous for its connection to the royal family and the legendary birth of Princess Margaret. Steeped in history and folklore, it’s known for its stunning architecture, beautiful grounds, and tales of hauntings."),
+    Location(name: "Craigmillar Castle", latitude: 55.9231, longitude: -3.1314, color: .green, description: "A well-preserved medieval fortress located just outside Edinburgh. Known for its strong historical ties, including its connection to Mary, Queen of Scots, it offers visitors a glimpse into Scotland’s turbulent past with impressive ruins and scenic views."),
     
     // 🔷 Myths & Legends
     Location(name: "Loch Ness", latitude: 57.3229, longitude: -4.4244, color: .purple),
