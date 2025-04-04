@@ -67,18 +67,18 @@ let locations: [Location] = [
     Location(name: "Craigmillar Castle", latitude: 55.9231, longitude: -3.1314, color: .green, description: "A well-preserved medieval fortress located just outside Edinburgh. Known for its strong historical ties, including its connection to Mary, Queen of Scots, it offers visitors a glimpse into Scotland’s turbulent past with impressive ruins and scenic views."),
     
     // 🔷 Myths & Legends
-    Location(name: "Loch Ness", latitude: 57.3229, longitude: -4.4244, color: .purple),
-    Location(name: "Selkies - Orkney Islands", latitude: 58.9825, longitude: -2.9595, color: .purple),
-    Location(name: "Fingal's Cave", latitude: 56.4337, longitude: -6.3350, color: .purple),
-    Location(name: "Corryvreckan Whirlpool", latitude: 56.1833, longitude: -5.7333, color: .purple),
-    Location(name: "Nine Maidens of Dundee", latitude: 56.4870, longitude: -3.0041, color: .purple),
-    Location(name: "Stoor Worm - Orkney", latitude: 58.9825, longitude: -2.9595, color: .purple),
-    Location(name: "Gorbals Vampire - Glasgow", latitude: 55.8460, longitude: -4.2580, color: .purple),
-    Location(name: "Ghost Piper of Clanyard Bay", latitude: 54.7000, longitude: -4.9500, color: .purple),
-    Location(name: "Robert the Bruce and the Spider - Bruce’s Cave", latitude: 55.0240, longitude: -3.0780, color: .purple),
-    Location(name: "The Ghosts of Glamis Castle", latitude: 56.6225, longitude: -3.0003, color: .purple),
-    Location(name: "The Green Lady of Crathes Castle", latitude: 57.0671, longitude: -2.4886, color: .purple),
-    Location(name: "The White Lady of St Andrews Cathedral", latitude: 56.3395, longitude: -2.7969, color: .purple),
-    Location(name: "The Mermaid of Assynt", latitude: 58.1700, longitude: -5.1000, color: .purple)
+    Location(name: "Loch Ness", latitude: 57.3229, longitude: -4.4244, color: .purple, description: "Scotland’s famous deep freshwater loch, best known for the legend of the Loch Ness Monster. Surrounded by stunning Highlands scenery, it’s a popular spot for boat tours, hiking, and exploring Urquhart Castle."),
+    Location(name: "Selkies Orkney Islands", latitude: 58.9835, longitude: -2.9595, color: .purple, description: "Mythical creatures from Scottish folklore, said to live as seals in the sea but shed their skins to become human on land. Orkney’s coastal waters and stories keep the legend alive."),
+    Location(name: "Fingal's Cave", latitude: 56.4337, longitude: -6.3350, color: .purple, description: "A sea cave on the uninhabited Isle of Staffa, known for its unique basalt columns and natural acoustics. Its striking formation has inspired legends, music, and visitors for centuries."),
+    Location(name: "Corryvreckan Whirlpool", latitude: 56.1833, longitude: -5.7333, color: .purple, description: "One of the world’s most powerful whirlpools, located between Jura and Scarba. Known for its fierce tidal currents and roaring waters, it’s a dramatic natural wonder steeped in Scottish folklore."),
+    Location(name: "Nine Maidens of Dundee", latitude: 56.4870, longitude: -3.0041, color: .purple, description: "A local legend about nine sisters said to have been devoured by a dragon, later slain by the hero Martin. The tale is tied to ancient stone markers and Dundee’s rich folklore."),
+    Location(name: "Stoor Worm Orkney", latitude: 58.9825, longitude: -2.9595, color: .purple, description: "A giant sea serpent from Scottish mythology, said to terrorize villages until it was defeated by the hero Assipattle. Some legends suggest it inspired the tale of the Loch Ness Monster."),
+    Location(name: "Gorbals Vampire Glasgow", latitude: 55.8460, longitude: -4.2580, color: .purple, description: "A Glasgow urban legend from the 1950s about a seven-foot-tall, iron-toothed vampire said to haunt the Southern Necropolis. The myth sparked a mass hunt by local children and debates over horror comics’ influence."),
+    Location(name: "Ghost Piper of Clanyard Bay", latitude: 54.7000, longitude: -4.9500, color: .purple, description: "A legend of a piper who vanished while exploring an underground cave near Clanyard Bay. His ghostly music is said to still echo from beneath the cliffs, haunting the coastline."),
+    Location(name: "Robert the Bruce and the Spider Bruce’s Cave", latitude: 55.0240, longitude: -3.0780, color: .purple, description: "A legend telling how Robert the Bruce, hiding in a cave, watched a spider persistently spin its web. Inspired by its determination, he rallied to win Scotland’s freedom at Bannockburn."),
+    Location(name: "The Ghosts of Glamis Castle", latitude: 56.6225, longitude: -3.0003, color: .purple, description: "Known for its haunted history, Glamis Castle is said to be home to several spirits, including the mysterious >>Monster of Glamis<< and the ghost of Lady Janet Douglas, executed for witchcraft. The castle’s eerie legends have intrigued visitors for centuries."),
+    Location(name: "The Green Lady of Crathes Castle", latitude: 57.0671, longitude: -2.4886, color: .purple, description: "A ghostly figure said to haunt Crathes Castle near Aberdeen. The Green Lady is believed to be the spirit of a former inhabitant, often seen wearing a green gown. She’s linked to a tragic love story, and her haunting presence is said to bring both fear and fascination to those who visit."),
+    Location(name: "The White Lady of St Andrews Cathedral", latitude: 56.3395, longitude: -2.7969, color: .purple, description: "A ghostly figure dressed in white, said to haunt the ruins of St Andrews Cathedral. Legend has it she is the spirit of a young woman searching for her lost lover, whose tragic fate is tied to the cathedral’s history."),
+    Location(name: "The Mermaid of Assynt", latitude: 58.1700, longitude: -5.1000, color: .purple, description: "A legend of a mermaid said to inhabit the waters near Assynt. According to folklore, she was captured by a local man but later escaped, cursing the land as she returned to the sea.")
 
 ]
