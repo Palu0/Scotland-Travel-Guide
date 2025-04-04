@@ -10,7 +10,7 @@ struct Location: Identifiable {
     let color: Color
     var description: String?
     var symbol: String?
-    var radius: Double?
+    var distance: Double?
 }
 
 let locations: [Location] = [
