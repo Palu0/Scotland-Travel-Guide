@@ -3,7 +3,7 @@ import SwiftUI
 struct LocationPopupView: View {
     let location: Location
     let onClose: () -> Void
-
+    @StateObject var locationManager = LocationManager()
     @State private var isMenuOpen: Bool = false
     
     var body: some View {
@@ -29,6 +29,9 @@ struct LocationPopupView: View {
                     }
                     .menuStyle(BorderlessButtonMenuStyle())
                     Spacer()
+                    if let lastLocation = locationManager.lastLocation {
+                        Text("\((distance(location1: location, location2: lastLocation))) nm")
+                    }
                 }
                 if isMenuOpen {
                     Text(location.description ?? "nothing to see here :(")
