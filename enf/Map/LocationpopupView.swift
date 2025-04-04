@@ -23,7 +23,6 @@ struct LocationPopupView: View {
                     .resizable()
                     .scaledToFit()
                 HStack {
-                    Spacer()
                     Button(isMenuOpen ? "read less" : "read more"){
                         isMenuOpen.toggle()
                     }
