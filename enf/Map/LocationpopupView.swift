@@ -10,7 +10,7 @@ struct LocationPopupView: View {
             VStack(alignment: .leading, spacing: 5) {
                 HStack {
                     Text(location.name)
-                        .font(.headline)
+                        .font(.title)
                     Spacer()
                     Button(action: onClose) {
                         Image(systemName: "xmark.circle")
