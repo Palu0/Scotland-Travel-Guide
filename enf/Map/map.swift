@@ -51,6 +51,18 @@ struct MapView: View {
                             self.selectedLocation = nil
                         }
                     }
+                    if let selectedLocation = selectedLocationTip {
+                        LocationPopupView(location: selectedLocation){
+                            selectedLocationTip = nil
+                        }
+                    }
+                }.onChange(of: selectedLocationTip) { newTip in
+                    if let newTip = newTip {
+                        region = MKCoordinateRegion(
+                            center: CLLocationCoordinate2D(latitude: newTip.latitude, longitude: newTip.longitude),
+                            span: MKCoordinateSpan(latitudeDelta: 0.07, longitudeDelta: 0.07)
+                        )
+                    }
                 }
             }
         }

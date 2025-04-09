@@ -2,7 +2,7 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-struct Location: Identifiable {
+struct Location: Identifiable, Equatable {
     let id = UUID()
     let name: String
     let latitude: Double

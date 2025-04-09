@@ -7,9 +7,9 @@
 import SwiftUI
 import CoreLocation
 var randomlocation : Location? = locations.randomElement()
+var selectedLocationTip : Location?
 struct TipOfDay: View {
     @StateObject var locationManager = LocationManager()
-    @State public var selectedLocationTip: Location?
     @Binding var selectedTab: Int
     public var body: some View {
         
@@ -38,11 +38,6 @@ struct TipOfDay: View {
                 Button("Watch on Map") {
                     selectedTab = 0
                     selectedLocationTip = randomlocation
-                }
-                if let selectedLocation = selectedLocationTip {
-                    LocationPopupView(location : selectedLocation){
-                        self.selectedLocationTip = nil
-                    }
                 }
             }
         }

@@ -21,3 +21,4 @@ func distance(location1: Location, location2: CLLocation) -> Double {
     return distanceNM
 }
 
+
