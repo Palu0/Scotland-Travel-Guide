@@ -7,10 +7,10 @@
 import SwiftUI
 import CoreLocation
 var randomlocation : Location? = locations.randomElement()
-
 struct TipOfDay: View {
     @StateObject var locationManager = LocationManager()
-    @State var selectedLocation: Location?
+    @State public var selectedLocationTip: Location?
+    @Binding var selectedTab: Int
     public var body: some View {
         
         VStack{
@@ -29,22 +29,22 @@ struct TipOfDay: View {
                 .scaledToFit()
             if let lastlocation = locationManager.lastLocation {
                 if let randomlocation = randomlocation{
-                    var Locationdistance = distance(location1:randomlocation, location2: lastlocation ?? CLLocation(latitude: 0, longitude: 0))
-                    Text("You are only \(Locationdistance ?? 0)km away")
+                    let Locationdistance = distance(location1:randomlocation, location2: lastlocation)
+                    Text("You are only \(Locationdistance)km away")
                 }
             }
             
             Spacer()
-            Button("watch on Map") {
-                selectedLocation = randomlocation
-                
-            }
-            if let selectedLocation = selectedLocation {
-                LocationPopupView(location : selectedLocation){
-                    self.selectedLocation = nil
+                Button("Watch on Map") {
+                    selectedTab = 0
+                    selectedLocationTip = randomlocation
+                }
+                if let selectedLocation = selectedLocationTip {
+                    LocationPopupView(location : selectedLocation){
+                        self.selectedLocationTip = nil
+                    }
                 }
             }
         }
     }
-}
 
