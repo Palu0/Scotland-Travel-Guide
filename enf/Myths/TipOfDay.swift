@@ -51,6 +51,7 @@ struct TipOfDay: View {
                     .foregroundColor(.gray)
             }
 
+
             Spacer()
 
             Button(action: {
