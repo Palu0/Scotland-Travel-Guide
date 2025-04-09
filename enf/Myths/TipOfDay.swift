@@ -1,9 +1,3 @@
-//
-//  myths.swift
-//  enf
-//
-//  Created by Nicolas Fuchs on 21.03.25.
-//
 import SwiftUI
 import CoreLocation
 
@@ -13,6 +7,10 @@ var selectedLocationTip: Location?
 struct TipOfDay: View {
     @StateObject var locationManager = LocationManager()
     @Binding var selectedTab: Int
+    @StateObject private var weatherManager = WeatherManager()
+    
+    @State private var temperature: Double?
+    @State private var weatherIcon: String = "questionmark.circle"
 
     var body: some View {
         VStack(spacing: 16) {
@@ -43,14 +41,31 @@ struct TipOfDay: View {
                     .padding()
             }
 
-            if let lastLocation = locationManager.lastLocation,
-               let randomlocation = randomlocation {
-                let locationDistance = distance(location1: randomlocation, location2: lastLocation)
-                Text("You are only \(locationDistance) km away")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
+            HStack(spacing: 12) {
+                if let lastLocation = locationManager.lastLocation,
+                   let randomlocation = randomlocation {
+                    let locationDistance = distance(location1: randomlocation, location2: lastLocation)
+                    Text("\(locationDistance) km away")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
 
+                    if let temp = temperature {
+                        Image(systemName: weatherIcon)
+                            .foregroundColor(.yellow)
+                        Text("\(Int(temp))°C")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+            .onAppear {
+                if let location = randomlocation {
+                    weatherManager.fetchWeather(latitude: location.latitude, longitude: location.longitude) { temp, icon in
+                        self.temperature = temp
+                        self.weatherIcon = icon
+                    }
+                }
+            }
 
             Spacer()
 
