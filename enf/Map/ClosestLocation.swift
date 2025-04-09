@@ -1,7 +1,7 @@
 import CoreLocation
 
-func distance(location1: Location, location2: CLLocation) -> Double {
-    let earthRadiusNM: Double = 3440.065 // Earth’s radius in nautical miles
+func distance(location1: Location, location2: CLLocation) -> Int {
+    let earthRadiusKM: Double = 6371.0 // Earth's radius in kilometers
 
     let lat1 = location1.latitude * .pi / 180  // Convert degrees to radians
     let lon1 = location1.longitude * .pi / 180
@@ -16,9 +16,7 @@ func distance(location1: Location, location2: CLLocation) -> Double {
             sin(dLon / 2) * sin(dLon / 2)
 
     let c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    let distanceNM = earthRadiusNM * c // Distance in nautical miles
+    let distanceKM = earthRadiusKM * c // Distance in kilometers
 
-    return distanceNM
+    return Int(distanceKM)
 }
-
-

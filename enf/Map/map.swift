@@ -29,10 +29,14 @@ struct MapView: View {
                         MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
                             Button(action: { selectedLocation = location }) {
                                 Image(systemName: location.symbol ?? "mappin.circle.fill")
-                                    .font(.title)
-                                    .foregroundColor(location.color)
-                            }
-                            .buttonStyle(PlainButtonStyle())
+                                                    .font(.title)
+                                                    .foregroundColor(location.color)
+                                                    .padding(8)
+                                                    .background(Color(.systemGray6))
+                                                    .clipShape(Circle())
+                                                    .shadow(radius: 4)
+                                            }
+                                            .buttonStyle(PlainButtonStyle())
                         }
                     }
                     .onReceive(locationManager.$lastLocation) { newLocation in

@@ -6,40 +6,67 @@
 //
 import SwiftUI
 import CoreLocation
-var randomlocation : Location? = locations.randomElement()
-var selectedLocationTip : Location?
+
+var randomlocation: Location? = locations.randomElement()
+var selectedLocationTip: Location?
+
 struct TipOfDay: View {
     @StateObject var locationManager = LocationManager()
     @Binding var selectedTab: Int
-    public var body: some View {
-        
-        VStack{
+
+    var body: some View {
+        VStack(spacing: 16) {
             Text("Your Tip of the Day!")
                 .font(.headline)
-            HStack{
-                Text("Let's visit \(randomlocation?.name ?? "No locations available")")
-                    .font(.title)
-                Image(systemName: "\(randomlocation?.symbol ?? "marker")")
-            }
-            Spacer()
-            Text("\(randomlocation?.description ?? "No locations available")")
-            Spacer()
-            Image("\(randomlocation?.name ?? "No locations available")")
-                .resizable()
-                .scaledToFit()
-            if let lastlocation = locationManager.lastLocation {
-                if let randomlocation = randomlocation{
-                    let Locationdistance = distance(location1:randomlocation, location2: lastlocation)
-                    Text("You are only \(Locationdistance)km away")
-                }
-            }
-            
-            Spacer()
-                Button("Watch on Map") {
-                    selectedTab = 0
-                    selectedLocationTip = randomlocation
-                }
-            }
-        }
-    }
+                .padding(.top)
 
+            HStack(spacing: 8) {
+                Text("Let's visit \(randomlocation?.name ?? "No locations available")")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                Image(systemName: randomlocation?.symbol ?? "mappin.and.ellipse")
+                    .imageScale(.large)
+            }
+
+            if let description = randomlocation?.description {
+                Text(description)
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+            }
+
+            if let imageName = randomlocation?.name {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(12)
+                    .padding()
+            }
+
+            if let lastLocation = locationManager.lastLocation,
+               let randomlocation = randomlocation {
+                let locationDistance = distance(location1: randomlocation, location2: lastLocation)
+                Text("You are only \(locationDistance) km away")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+
+            Spacer()
+
+            Button(action: {
+                selectedTab = 0
+                selectedLocationTip = randomlocation
+            }) {
+                Text("Watch on Map")
+                    .fontWeight(.medium)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue.opacity(0.8))
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding(.horizontal)
+        }
+        .padding()
+    }
+}

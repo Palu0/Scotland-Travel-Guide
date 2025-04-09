@@ -5,42 +5,66 @@ struct LocationPopupView: View {
     let onClose: () -> Void
     @StateObject var locationManager = LocationManager()
     @State private var isMenuOpen: Bool = false
-    
+
     var body: some View {
         VStack {
             Spacer()
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 16) {
                 HStack {
                     Text(location.name)
-                        .font(.title)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
                     Image(systemName: location.symbol ?? "globe")
+                        .foregroundColor(.blue)
                     Spacer()
                     Button(action: onClose) {
-                        Image(systemName: "xmark.circle")
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title)
+                            .foregroundColor(.gray)
                     }
                 }
+                
+                // Location Image
                 Image(location.name)
                     .resizable()
                     .scaledToFit()
+                    .cornerRadius(12)
+                    .shadow(radius: 8)
+                    .padding(.vertical)
+
+                // Description Toggle
                 HStack {
-                    Button(isMenuOpen ? "read less" : "read more"){
-                        isMenuOpen.toggle()
+                    Button(action: { isMenuOpen.toggle() }) {
+                        Text(isMenuOpen ? "Read less" : "Read more")
+                            .fontWeight(.medium)
+                            .foregroundColor(.blue)
                     }
-                    .menuStyle(BorderlessButtonMenuStyle())
+                    .buttonStyle(PlainButtonStyle())
+
                     Spacer()
+
                     if let lastLocation = locationManager.lastLocation {
-                        Text("\((distance(location1: location, location2: lastLocation))) nm")
+                        Text("\(Int(distance(location1: location, location2: lastLocation))) km")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
                     }
                 }
+
+                // Description Text
                 if isMenuOpen {
-                    Text(location.description ?? "nothing to see here :(")
+                    Text(location.description ?? "Nothing to see here :(")
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                        .padding(.top, 8)
                 }
             }
             .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(10)
-            .shadow(radius: 5)
+            .background(Color(.systemBackground))
+            .cornerRadius(15)
+            .shadow(radius: 10)
+            .padding([.horizontal, .bottom], 16)
         }
-        .offset(y: +10)
+        .offset(y: 10)
     }
 }
