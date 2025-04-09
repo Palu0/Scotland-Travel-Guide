@@ -37,15 +37,14 @@ struct TipOfDay: View {
             Spacer()
             Button("watch on Map") {
                 selectedLocation = randomlocation
-                if let selectedLocation = selectedLocation {
-                    LocationPopupView(location : selectedLocation){
-                        self.selectedLocation = nil
-                    }
-                }
                 
             }
-            
+            if let selectedLocation = selectedLocation {
+                LocationPopupView(location : selectedLocation){
+                    self.selectedLocation = nil
+                }
             }
         }
     }
+}
 
