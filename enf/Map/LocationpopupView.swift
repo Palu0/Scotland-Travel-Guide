@@ -19,7 +19,7 @@ struct LocationPopupView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
                     Image(systemName: location.symbol ?? "globe")
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color(location.color))
                     Spacer()
                     Button(action: onClose) {
                         Image(systemName: "xmark.circle.fill")
