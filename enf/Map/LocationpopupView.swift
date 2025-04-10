@@ -48,7 +48,7 @@ struct LocationPopupView: View {
                     Spacer()
                     
                     if let lastLocation = locationManager.lastLocation {
-                        let dist = Int(distance(location1: location, location2: lastLocation))
+                        let dist = distance(location1: location, location2: lastLocation)
                         
                         HStack(spacing: 8) {
                             Text("\(dist) km")
