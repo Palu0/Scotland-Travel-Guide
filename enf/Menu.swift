@@ -22,6 +22,11 @@ struct Menu: View{
                     Label("Tip of the Day",systemImage: "lightbulb.min")
                 }
                 .tag(1)
+            EventView(events: events, selectedTab: $selectedTab)
+                .tabItem {
+                    Label("Events",systemImage: "calendar")
+                }
+                .tag(2)
         }.accentColor(Color.primary)
     }
 
