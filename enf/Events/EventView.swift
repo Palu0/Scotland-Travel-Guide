@@ -1,14 +1,8 @@
-//
-//  EventView.swift
-//  enf
-//
-//  Created by Paul Gehring on 11.04.25.
-//
 import SwiftUI
 import CoreLocation
 
 struct EventView: View {
-    let events: [Location]
+    let events: [Event]
     @Binding var selectedTab: Int
 
     var body: some View {
@@ -25,6 +19,13 @@ struct EventView: View {
                         VStack(alignment: .leading, spacing: 6) {
                             Text(event.name)
                                 .font(.headline)
+
+                            if let days = event.daysUntilNextOccurrence() {
+                                Text("in \(days) day\(days == 1 ? "" : "s")")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+
                             if let description = event.description {
                                 Text(description)
                                     .font(.subheadline)
@@ -37,10 +38,9 @@ struct EventView: View {
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
-                    .shadow(radius: 1)
+                    .shadow(color: .black.opacity(0.05), radius: 2, x: 0, y: 1)
                     .onTapGesture {
                         selectedTab = 0
-                        selectedLocationTip = event
                     }
                 }
             }
